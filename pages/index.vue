@@ -90,7 +90,7 @@
     </div>
     <div class="section-2 wow slideInLeft" >
       <v-container>
-        <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
+        <div class="pa-5 d-flex align-center justify-center mt-10" style="flex-flow:column">
           <h2>Project Highlight - Dash Spatia</h2>
           <div class="purpleLine my-5"></div>
           <div style="max-width: 800px">
@@ -147,26 +147,25 @@
 
     </div>
 
-    
-    <div class="section-2 wow slideInLeft" >
-      <v-container>
-        <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
-          <h2>Project Highlight - Menupad</h2>
-          <div class="purpleLine my-5"></div>
-          <div style="max-width: 800px">
-            <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
+    <div class="menupadSection pt-10 mt-10">
+        <div class="section-2 wow slideInLeft">
+          <v-container>
+            <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
+              <h2>Project Highlight - Menupad</h2>
+              <div class="whiteLine my-5"></div>
+              <div style="max-width: 800px">
+                <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
 
-This menu can be accessed via a QR code, or via a link on your social media profile.</center>
-          </diV>
+                This menu can be accessed via a QR code, or via a link on your social media profile.</center>
+              </diV>
+            </div>
+          </v-container>
         </div>
-      </v-container>
-
-      <div>
-        
-      </div>
+  
       <v-sheet
-          class="mx-auto"
+          class="mx-auto elevation-0"
           elevation="8"
+          style="background-color: transparent;"
         >
           <v-slide-group
             v-model="model"
@@ -180,36 +179,42 @@ This menu can be accessed via a QR code, or via a link on your social media prof
               v-slot="{ active, toggle }"
             >
               <v-card
-                class="ma-4"
-                width="200"
+                class="ma-4 elevation-0"
+                  width="200"
+                  style="background-color:transparent"
               >
               <img :src="'/img/m'+n+'.png'" width="100%"/>
               </v-card>
             </v-slide-item>
           </v-slide-group>
         </v-sheet>
-
         
-        <!-- <div class="videoSection" style="width:300px">
-          <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
-        </div> -->
-<!-- 
-        <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
-          <div>
-          <h2>
-            Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development <br v-if="!$vuetify.breakpoint.mobile"/>Challange
-          </h2>
-        </div>
-          <div class="ml-3 pl-3" style="max-width:800px;text-align:left; border-left:7px solid white;">
-            Dash growing tools and modules will help automate and accelerate your location research work. Dash is capable to tailor your need to turn the data into a location insight using a custom-made module for your company and client specific workflow. The most challangin part dash is feature scalability.
-          </div>
-        </div>
+        <div class="d-flex justify-center align-center">
+            <div class="mb-5" style="text-align:center;max-width:800px">
+              Receive orders or pre-orders with a special format via whatsapp?
 
-        
-        <div class="d-flex justify-center my-5">
-          <v-btn style="width:350px" class="purple darken-4" rounded>Read More</v-btn>
-        </div>
-       -->
+    Help your customers make ordering easier.
+
+    Customers can select the menu and send details of the shipping address. No more need to write order writing format.
+    Want to direct customers to your online store, social media channels or food delivery service?
+
+The menupad provides a page for storing those links, one where it's all there.
+            </div>
+      </div>
+
+        <v-container>
+          <v-row>
+            <v-col md="3" cols="12" class="videoSection">
+              <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
+            </v-col>
+            <v-col md="9" cols="12">
+              <img class="elevation-4" width="100%" src="/img/menupad-header.png" style="border-radius:10px">
+              <h2>Design and Development Challange</h2>
+              Dash growing tools and modules will help automate and accelerate your location research work. Dash is capable to tailor your need to turn the data into a location insight using a custom-made module for your company and client specific workflow. The most challangin part dash is feature scalability. <br/>
+              <v-btn class="white red--text mt-3" rounded style="width:250px">READ MORE</v-btn>
+            </v-col>
+          </v-row>
+      </v-container>
 
     </div>
 
@@ -253,7 +258,7 @@ This menu can be accessed via a QR code, or via a link on your social media prof
   height:fit-content;
   font-size:1.1em;
   border-radius: 20px;
-  background:linear-gradient(277.92deg, #936BB3 -10.28%, #1E0035 -10.28%, #25002C -10.27%, #302B34 88.58%) !important;
+  background: linear-gradient(96.63deg, #260631 44.79%, #270058 90.71%) !important;
   box-shadow:20px -1px 134px 47px #000000 !important;
 }
 
@@ -272,7 +277,19 @@ This menu can be accessed via a QR code, or via a link on your social media prof
   height:10px;
   width:300px;
   border-radius:20px;
-  background: linear-gradient(90.02deg, #D9D9D9 -10.32%, #A329AD -10.31%, #1F1643 114.18%)
+  background: linear-gradient(90.02deg, #D9D9D9 -10.32%, #A329AD -10.31%, #1F1643 114.18%);
+}
+
+.whiteLine {
+  height:10px;
+  width:300px;
+  border-radius:20px;
+  
+  background: linear-gradient(90deg, rgba(217, 217, 217, 0.83) 1.82%, rgba(217, 217, 217, 0.27) 100.01%);
+}
+
+.menupadSection {
+  background: linear-gradient(96.63deg, #850038 44.79%, #8E3300 90.71%);
 }
 </style>
 
