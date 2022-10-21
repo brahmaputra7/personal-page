@@ -161,9 +161,9 @@ This menu can be accessed via a QR code, or via a link on your social media prof
         </div>
       </v-container>
 
-      <div class="d-flex" style="flex-flow:row wrap">
+      <div>
         
-        
+      </div>
       <v-sheet
           class="mx-auto"
           elevation="8"
@@ -189,9 +189,11 @@ This menu can be accessed via a QR code, or via a link on your social media prof
           </v-slide-group>
         </v-sheet>
 
-
-      </div>
-
+        
+        <!-- <div class="videoSection" style="width:300px">
+          <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
+        </div> -->
+<!-- 
         <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
           <div>
           <h2>
@@ -203,17 +205,11 @@ This menu can be accessed via a QR code, or via a link on your social media prof
           </div>
         </div>
 
-        <div></div>
-        <div class="videoSection" style="width:250px;flex-basis:20%">
-          <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
-        </div>
-
-
         
         <div class="d-flex justify-center my-5">
           <v-btn style="width:350px" class="purple darken-4" rounded>Read More</v-btn>
         </div>
-      
+       -->
 
     </div>
 
