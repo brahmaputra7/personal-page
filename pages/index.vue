@@ -16,7 +16,7 @@
               <div v-else class="navMenus d-flex align-center">
                 <div class="mr-5"><b>HOME</b></div>
                 <div class="mr-5"><b><a href="/pdf/Brahma-CV.pdf" download="" target="blank">CURRICULUM VITAE</a></b></div>
-                <div><v-btn color="purple darken-4">contact</v-btn></div>
+                <div><v-btn color="purple darken-4" @click="contact=true">contact</v-btn></div>
               </div>
           </div>
           <div class="d-flex justify-center align-center" style="flex-grow:1; flex-flow:column  ">
@@ -60,12 +60,24 @@
         absolute
       >
         <v-list-item>
-          <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-          </v-list-item-avatar>
-
           <v-list-item-content>
-            <v-list-item-title>John Leider</v-list-item-title>
+            <v-list-item-title>
+              <b>HOME</b>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <b><a href="/pdf/Brahma-CV.pdf" class="white--text" download="" target="blank" style="text-decoration:none">CURRICULUM VITAE</a></b>
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title>
+              <v-btn color="purple darken-4" @click="contact=true">contact</v-btn>
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -134,6 +146,13 @@
       
 
     </div>
+    <v-dialog v-model="contact" width="500px">
+      <v-card class="pa-5">
+        <v-icon class="mr-2">mdi-email</v-icon> brahmaputra1996@gmail.com<br/>
+        <v-divider class="my-2"></v-divider>
+        <v-icon class="mr-2" >mdi-whatsapp</v-icon> 085862266465
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -207,7 +226,8 @@ export default {
   data(){
     return {
       drawer:false,
-      model:null
+      model:null,
+      contact:false
     }
   },
   methods:{
