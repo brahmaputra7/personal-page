@@ -125,7 +125,7 @@
           </v-slide-group>
         </v-sheet>
 
-        <div class="d-flex justify-center my-10" style="flex-flow:row wrap">
+        <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
           <div>
           <h2>
             Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development<br v-if="!$vuetify.breakpoint.mobile"/>Challange
