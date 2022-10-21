@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="section-1">
-      <v-container class="d-flex" style="flex-flow:column; min-height:800px">
-          <div class="d-flex justify-space-between align-center py-10">
+    <div class="navbarPersonal" :class="{'change_color': scrollPosition > 50}">
+      <v-container>
+      <div class="d-flex justify-space-between align-center" >
               <div><img src="/img/BRAHMALAB.png" width="150px"></div>
               <div v-if="$vuetify.breakpoint.mobile">
                 <v-btn
@@ -14,13 +14,20 @@
                 </v-btn>
               </div>
               <div v-else class="navMenus d-flex align-center">
-                <div class="mr-5"><b>HOME</b></div>
-                <div class="mr-5"><b><a href="/pdf/Brahma-CV.pdf" download="" target="blank">CURRICULUM VITAE</a></b></div>
+                <a class="mr-5" href="#section-2"><b>Highlight</b></a>
+                <a class="mr-5" href="#section-2"><b>Background</b></a>
+                <div class="mr-5" @click="contact=true"><b>Project</b></div>
+                <div class="mr-5" @click="contact=true"><b>Publication</b></div>
+                <div class="mr-5"><b><a href="/pdf/Brahma-CV.pdf" download="" target="blank">Curicculum Vitae</a></b></div>
                 <div><v-btn color="purple darken-4" @click="contact=true">contact</v-btn></div>
               </div>
           </div>
+        </v-container>
+    </div>
+    <div class="section-1" >
+      <v-container class="d-flex" style="flex-flow:column; min-height:800px">
           <div class="d-flex justify-center align-center" style="flex-grow:1; flex-flow:column  ">
-            <div class="mainSection d-flex justify-center pa-10 align-center mb-10" >
+            <div class="mainSection d-flex justify-center pa-10 align-center mb-10" data-aos-delay="100">
               <div style="max-width:750px">
                 <v-row class="align-center">
                   <v-col cols="12" md="3" class="d-flex justify-center">
@@ -35,7 +42,7 @@
             <div>
               <div>
                 <center>
-                 Skill Tags
+                 Skill Tags:
                 </center>
             </div>
             <div class="mb-10" style="max-width:600px;text-align: center;">
@@ -88,11 +95,12 @@
       </v-navigation-drawer>
       
     </div>
-    <div class="section-2 wow slideInLeft" >
+    <div id="section-2" class="section-2 wow slideInLeft" >
       <v-container>
-        <div class="pa-5 d-flex align-center justify-center mt-10" style="flex-flow:column">
-          <h2>Project Highlight - Dash Spatia</h2>
-          <div class="purpleLine my-5"></div>
+        <div class="pa-5 d-flex align-center justify-center mt-10" style="flex-flow:column" data-aos="fade-up">
+          <h2>Product Highlight - Dash Spatia</h2>
+          <div class="purpleLine my-5" 
+      data-aos="flip-right"></div>
           <div style="max-width: 800px">
             <center>Dash is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
           </diV>
@@ -100,6 +108,7 @@
       </v-container>
 
       <v-sheet
+      data-aos="fade-up"
           class="mx-auto"
           elevation="8"
         >
@@ -112,7 +121,7 @@
             <v-slide-item
               v-for="n in 6"
               :key="n"
-              v-slot="{ active, toggle }"
+              v-slot="{ active }"
             >
               <v-card
                 :color="active ? undefined : 'grey lighten-1'"
@@ -125,7 +134,8 @@
           </v-slide-group>
         </v-sheet>
 
-        <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
+        <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap" 
+          data-aos="fade-up">
           <div>
           <h2>
             Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development <br v-if="!$vuetify.breakpoint.mobile"/>Challange
@@ -136,12 +146,13 @@
           </div>
         </div>
 
-        <div class="videoSection">
+        <div class="videoSection" 
+      data-aos="zoom-in-up">
           <video autoplay loop muted="muted" controlslist="nodownload" src="/img/spatia.mp4"></video>
         </div>
         
         <div class="d-flex justify-center my-5">
-          <v-btn style="width:350px" class="purple darken-4" rounded>Read More</v-btn>
+          <v-btn class="white red--text mt-3" rounded style="width:250px" href="https://spatia.id" target="_blank">LEARN MORE</v-btn>
         </div>
       
 
@@ -150,10 +161,10 @@
     <div class="menupadSection pt-10 mt-10">
         <div class="section-2 wow slideInLeft">
           <v-container>
-            <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
+            <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
               <h2>Project Highlight - Menupad</h2>
-              <div class="whiteLine my-5"></div>
-              <div style="max-width: 800px">
+              <div class="whiteLine my-5"  data-aos="flip-right"></div>
+              <div style="max-width: 800px"  data-aos="fade-up">
                 <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
 
                 This menu can be accessed via a QR code, or via a link on your social media profile.</center>
@@ -163,6 +174,7 @@
         </div>
   
       <v-sheet
+       data-aos="fade-up"
           class="mx-auto elevation-0"
           elevation="8"
           style="background-color: transparent;"
@@ -176,7 +188,6 @@
             <v-slide-item
               v-for="n in 8"
               :key="n"
-              v-slot="{ active, toggle }"
             >
               <v-card
                 class="ma-4 elevation-0"
@@ -189,7 +200,7 @@
           </v-slide-group>
         </v-sheet>
         
-        <div class="d-flex justify-center align-center">
+        <div class="d-flex justify-center align-center"  data-aos="fade-up">
             <div class="mb-5" style="text-align:center;max-width:800px">
               Receive orders or pre-orders with a special format via whatsapp?
 
@@ -202,7 +213,7 @@ The menupad provides a page for storing those links, one where it's all there.
             </div>
       </div>
 
-        <v-container>
+        <v-container data-aos="fade-up">
           <v-row>
             <v-col md="3" cols="12" class="videoSection">
               <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
@@ -211,7 +222,7 @@ The menupad provides a page for storing those links, one where it's all there.
               <img class="elevation-4" width="100%" src="/img/menupad-header.png" style="border-radius:10px">
               <h2>Design and Development Challange</h2>
               Dash growing tools and modules will help automate and accelerate your location research work. Dash is capable to tailor your need to turn the data into a location insight using a custom-made module for your company and client specific workflow. The most challangin part dash is feature scalability. <br/>
-              <v-btn class="white red--text mt-3" rounded style="width:250px">READ MORE</v-btn>
+              <v-btn class="white red--text mt-3" rounded style="width:250px" href="https://spatia.id" target="_blank">LEARN MORE</v-btn>
             </v-col>
           </v-row>
       </v-container>
@@ -219,7 +230,7 @@ The menupad provides a page for storing those links, one where it's all there.
     </div>
 
     <div>
-      asdasdasda
+      
     </div>
 
     <v-dialog v-model="contact" width="500px">
@@ -231,6 +242,36 @@ The menupad provides a page for storing those links, one where it's all there.
     </v-dialog>
   </div>
 </template>
+
+<script>
+import Logo from '~/components/Logo.vue'
+import VuetifyLogo from '~/components/VuetifyLogo.vue'
+
+export default {
+  components: {
+    Logo,
+    VuetifyLogo
+  },
+  created(){
+  },
+  data(){
+    return {
+      drawer:false,
+      model:null,
+      contact:false,
+      scrollPosition:null
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
+  methods:{
+    updateScroll() {
+       this.scrollPosition = window.scrollY
+    }
+  },
+}
+</script>
 
 <style lang="scss">
 .navMenus {
@@ -249,6 +290,16 @@ The menupad provides a page for storing those links, one where it's all there.
   a {
     color:#fff !important; text-decoration: none;
   }
+}
+
+.navbarPersonal {
+  position:fixed;
+  display:flex;
+  align-items: center;
+  top:0;
+  width:100%;
+  height:80px;
+  z-index:999;
 }
 
 .section-1 {
@@ -292,30 +343,14 @@ The menupad provides a page for storing those links, one where it's all there.
   background: linear-gradient(90deg, rgba(217, 217, 217, 0.83) 1.82%, rgba(217, 217, 217, 0.27) 100.01%);
 }
 
+.change_color {
+  transition:1s;
+  height:60px;
+  background-color:#000;
+  padding:0;
+}
+
 .menupadSection {
   background: linear-gradient(96.63deg, #850038 44.79%, #8E3300 90.71%);
 }
 </style>
-
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
-  created(){
-  },
-  data(){
-    return {
-      drawer:false,
-      model:null,
-      contact:false
-    }
-  },
-  methods:{
-  }
-}
-</script>
