@@ -181,9 +181,6 @@
   min-height:100vh;
 }
 .mainSection {
-  &:hover {
-    transform:scale(1.1);
-  }
   transition:1s;
   max-width:800px;
   height:fit-content;
