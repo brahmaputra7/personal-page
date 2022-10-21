@@ -129,7 +129,7 @@
         </div>
         
         <div class="d-flex justify-center my-5">
-          <v-btn style="width:350px" class="purple" rounded>Read More</v-btn>
+          <v-btn style="width:350px" class="purple darken-4" rounded>Read More</v-btn>
         </div>
       
 
@@ -159,7 +159,7 @@
 .section-1 {
   background:url('/img/bg.jpg');
   width:100%;
-  height:100vh;
+  min-height:100vh;
 }
 .mainSection {
   &:hover {
