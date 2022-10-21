@@ -38,7 +38,7 @@
                  Skill Tags
                 </center>
             </div>
-            <div style="max-width:600px;text-align: center;">
+            <div class="mb-10" style="max-width:600px;text-align: center;">
               <v-chip class="mr-b mt-2">User Experience (UX)</v-chip>
               <v-chip class="mr-b mt-2">Front-end Development</v-chip>
               <v-chip class="mr-b mt-2">GIS Development</v-chip>
@@ -216,6 +216,10 @@ The menupad provides a page for storing those links, one where it's all there.
           </v-row>
       </v-container>
 
+    </div>
+
+    <div>
+      asdasdasda
     </div>
 
     <v-dialog v-model="contact" width="500px">
