@@ -27,7 +27,7 @@
                     <img src="/img/PHOTO.png" width="150px" height="150px">
                   </v-col>
                   <v-col cols="12" md="9" class="pa-10">
-                    I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using NuxtJS. I merge technical skills with design knowledge to create innovative products that drive business.
+                    I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using and Figma. I merge technical skills with design knowledge to create innovative products that drive business.
                   </v-col>
                 </v-row>
               </div>
@@ -80,57 +80,59 @@
       <v-container>
         <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
           <h2>Project Highlight - Dash Spatia</h2>
+          <div class="purpleLine my-5"></div>
           <div style="max-width: 800px">
             <center>Dash is a spatial tools and analytical app that helps user analyzing spatial data with multiple tools. Dash is bringing multiple spatial datasets and a growing library of spatial analysis tools to help people do their location research faster and more efficient anywhere.</center>
           </diV>
+        </div>
+      </v-container>
+
+      <v-sheet
+          class="mx-auto"
+          elevation="8"
+        >
+          <v-slide-group
+            v-model="model"
+            class="pa-4"
+            active-class="success"
+            show-arrows
+          >
+            <v-slide-item
+              v-for="n in 6"
+              :key="n"
+              v-slot="{ active, toggle }"
+            >
+              <v-card
+                :color="active ? undefined : 'grey lighten-1'"
+                class="ma-4"
+                width="300"
+              >
+              <img :src="'/img/'+n+'.jpg'" width="100%"/>
+              </v-card>
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
+
+        <div class="d-flex justify-center my-10" style="flex-flow:row wrap">
+          <div>
+          <h2>
+            Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development<br v-if="!$vuetify.breakpoint.mobile"/>Challange
+          </h2>
+        </div>
+          <div class="ml-3 pl-3" style="max-width:800px;text-align:left; border-left:7px solid white;">
+            Dash growing tools and modules will help automate and accelerate your location research work. Dash is capable to tailor your need to turn the data into a location insight using a custom-made module for your company and client specific workflow. The most challangin part dash is feature scalability.
+          </div>
         </div>
 
         <div class="videoSection">
           <video autoplay loop muted="muted" controlslist="nodownload" src="/img/spatia.mp4"></video>
         </div>
-
-        <v-sheet
-            class="mx-auto"
-            elevation="8"
-          >
-            <v-slide-group
-              v-model="model"
-              class="pa-4"
-              active-class="success"
-              show-arrows
-            >
-              <v-slide-item
-                v-for="n in 15"
-                :key="n"
-                v-slot="{ active, toggle }"
-              >
-                <v-card
-                  :color="active ? undefined : 'grey lighten-1'"
-                  class="ma-4"
-                  height="200"
-                  width="300"
-                  @click="toggle"
-                >
-                  <v-row
-                    class="fill-height"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-scale-transition>
-                      <v-icon
-                        v-if="active"
-                        color="white"
-                        size="48"
-                        v-text="'mdi-close-circle-outline'"
-                      ></v-icon>
-                    </v-scale-transition>
-                  </v-row>
-                </v-card>
-              </v-slide-item>
-            </v-slide-group>
-          </v-sheet>
-      </v-container>
+        
+        <div class="d-flex justify-center my-5">
+          <v-btn style="width:350px" class="purple" rounded>Read More</v-btn>
+        </div>
       
+
     </div>
   </div>
 </template>
@@ -181,6 +183,13 @@
     width:100%;
     max-width:1000px;
   }
+}
+
+.purpleLine {
+  height:10px;
+  width:300px;
+  border-radius:20px;
+  background: linear-gradient(90.02deg, #D9D9D9 -10.32%, #A329AD -10.31%, #1F1643 114.18%)
 }
 </style>
 
