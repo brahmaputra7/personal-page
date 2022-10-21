@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="section-1">
-      <v-container class="d-flex" style="flex-flow:column; height:100%">
+      <v-container class="d-flex" style="flex-flow:column; min-height:800px">
           <div class="d-flex justify-space-between align-center py-10">
               <div><img src="/img/BRAHMALAB.png" width="150px"></div>
               <div v-if="$vuetify.breakpoint.mobile">
@@ -27,7 +27,7 @@
                     <img src="/img/PHOTO.png" width="150px" height="150px">
                   </v-col>
                   <v-col cols="12" md="9" class="pa-10">
-                    I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using and Figma. I merge technical skills with design knowledge to create innovative products that drive business.
+                    I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business.
                   </v-col>
                 </v-row>
               </div>
@@ -69,7 +69,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title>
-              <b><a href="/pdf/Brahma-CV.pdf" class="white--text" download="" target="blank" style="text-decoration:none">CURRICULUM VITAE</a></b>
+              <b><a href="/pdf/Brahma-CV.pdf" class="white--text" download="" target="blank" style="text-decoration:none">DOWNLOAD MY CV</a></b>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -128,7 +128,7 @@
         <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
           <div>
           <h2>
-            Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development<br v-if="!$vuetify.breakpoint.mobile"/>Challange
+            Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development <br v-if="!$vuetify.breakpoint.mobile"/>Challange
           </h2>
         </div>
           <div class="ml-3 pl-3" style="max-width:800px;text-align:left; border-left:7px solid white;">
@@ -146,6 +146,77 @@
       
 
     </div>
+
+    
+    <div class="section-2 wow slideInLeft" >
+      <v-container>
+        <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column">
+          <h2>Project Highlight - Menupad</h2>
+          <div class="purpleLine my-5"></div>
+          <div style="max-width: 800px">
+            <center>Menupad helps culinary businesses to provide digital menus, automate whatsapp orders and organize online store links or social media for your business. Unlike print menus which are hard to see on small screens. Direct your customers to digital menus specially designed for smartphone screens.
+
+This menu can be accessed via a QR code, or via a link on your social media profile.</center>
+          </diV>
+        </div>
+      </v-container>
+
+      <div class="d-flex" style="flex-flow:row wrap">
+        
+        
+      <v-sheet
+          class="mx-auto"
+          elevation="8"
+        >
+          <v-slide-group
+            v-model="model"
+            class="pa-4"
+            active-class="success"
+            show-arrows
+          >
+            <v-slide-item
+              v-for="n in 8"
+              :key="n"
+              v-slot="{ active, toggle }"
+            >
+              <v-card
+                class="ma-4"
+                width="200"
+              >
+              <img :src="'/img/m'+n+'.png'" width="100%"/>
+              </v-card>
+            </v-slide-item>
+          </v-slide-group>
+        </v-sheet>
+
+
+      </div>
+
+        <div class="d-flex justify-center my-10 pa-3" style="flex-flow:row wrap">
+          <div>
+          <h2>
+            Design and <br v-if="!$vuetify.breakpoint.mobile"/>Development <br v-if="!$vuetify.breakpoint.mobile"/>Challange
+          </h2>
+        </div>
+          <div class="ml-3 pl-3" style="max-width:800px;text-align:left; border-left:7px solid white;">
+            Dash growing tools and modules will help automate and accelerate your location research work. Dash is capable to tailor your need to turn the data into a location insight using a custom-made module for your company and client specific workflow. The most challangin part dash is feature scalability.
+          </div>
+        </div>
+
+        <div></div>
+        <div class="videoSection" style="width:250px;flex-basis:20%">
+          <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
+        </div>
+
+
+        
+        <div class="d-flex justify-center my-5">
+          <v-btn style="width:350px" class="purple darken-4" rounded>Read More</v-btn>
+        </div>
+      
+
+    </div>
+
     <v-dialog v-model="contact" width="500px">
       <v-card class="pa-5">
         <v-icon class="mr-2">mdi-email</v-icon> brahmaputra1996@gmail.com<br/>
