@@ -26,7 +26,7 @@
                   <v-col cols="12" md="3" class="d-flex justify-center">
                     <img src="/img/PHOTO.png" width="150px" height="150px">
                   </v-col>
-                  <v-col cols="12" md="9" class="pa-10">
+                  <v-col cols="12" md="9" class="pa-2">
                     I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business.
                   </v-col>
                 </v-row>
