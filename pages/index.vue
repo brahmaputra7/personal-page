@@ -31,10 +31,10 @@
               <div style="max-width:750px">
                 <v-row class="align-center">
                   <v-col cols="12" md="3" class="d-flex justify-center">
-                    <img src="/img/PHOTO.png" width="150px" height="150px">
+                    <img src="/img/PHOTO.png" width="150px">
                   </v-col>
                   <v-col cols="12" md="9" class="pa-2">
-                    I’m <b>Brahma Putra</b> —  a UX Engineer based in Bandung. Currently working at Cityplan Indonesia. I started as a front-end developer, I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business.
+                    I’m <b>Brahma Putra</b> —  a UX Engineer of <a class="white--text" href="https://cityplan.id" target="_blank">Cityplan Indonesia</a>. I started as a front-end developer, I work on most project using NuxtJS and Figma. I merge technical skills with design knowledge to create innovative products that drive business. Mostly build tools for spatial analysis and public services.
                   </v-col>
                 </v-row>
               </div>
@@ -158,7 +158,7 @@
 
     </div>
 
-    <div class="menupadSection pt-10 mt-10">
+    <div class="menupadSection pt-10 mt-10 pb-10">
         <div class="section-2 wow slideInLeft">
           <v-container>
             <div class="pa-5 d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
@@ -213,7 +213,7 @@ The menupad provides a page for storing those links, one where it's all there.
             </div>
       </div>
 
-        <v-container data-aos="fade-up">
+        <v-container data-aos="fade-up pb-10">
           <v-row>
             <v-col md="3" cols="12" class="videoSection">
               <video autoplay loop muted="muted" controlslist="nodownload" src="/img/menupad.mp4"></video>
@@ -229,8 +229,53 @@ The menupad provides a page for storing those links, one where it's all there.
 
     </div>
 
-    <div>
+    <div class="projectListSection pa-10">
       
+      <div class="d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
+        <h1>Projects</h1>
+        <div class="purpleLine mb-8 mt-3"></div>
+      </div>
+
+      <div style="text-align:center"  data-aos="fade-up">
+        <v-btn-toggle
+            v-model="projectListToggle"
+            rounded
+          >
+            <v-btn>
+              All
+            </v-btn>
+            <v-btn>
+              Location Intelligence
+            </v-btn>
+            <v-btn>
+              Public Services
+            </v-btn>
+            <v-btn>
+              Machine Learning
+            </v-btn>
+            <v-btn>
+              Others
+            </v-btn>
+          </v-btn-toggle>
+      </div>
+    </div>
+
+    <div  data-aos="fade-up">
+      <v-container>
+        <v-row>
+          <v-col cols="6" md="4" v-for="item,index in projectData" :key="index" style="height:350px">
+            <div class="projectContainer">
+              <div class="pa-5 d-flex align-space-between" style="flex-flow:row wrap">
+                <img :src="'/img/' + item.thumbnail " width="100%"/>
+                <div>
+                  <h3>{{item.title}}</h3>
+                  <div style="font-size:0.8em">{{item.descriptiton}}</div>
+                </div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+    </v-container>
     </div>
 
     <v-dialog v-model="contact" width="500px">
@@ -259,7 +304,41 @@ export default {
       drawer:false,
       model:null,
       contact:false,
-      scrollPosition:null
+      scrollPosition:null,
+      projectListToggle:'',
+      projectData:[
+        {
+          title:'Patrol Taru Pusat',
+          descriptiton:'Spatial monitoring and control center. Integrating data from all across indonesia.',
+          thumbnail:'patrolpusat.png',
+          category:''
+        },
+        {
+          title:'RDTR Interaktif',
+          descriptiton:'Interaktif Spatial Plan of Indonesia. Featured in Online Single Submision (OSS) website.',
+          thumbnail:'rdtrinteraktif.png',
+        },
+        {
+          title:'Composite Credit Rating',
+          descriptiton:'Rating and Assessment comparison from multiple source like S&P, Moodys, and Fitch.',
+          thumbnail:'ccr.png',
+        },
+        {
+          title:'Teletherapy Mobile App',
+          descriptiton:'a Mobile app for online doctor consultation.',
+          thumbnail:'teletherapy.png',
+        },
+        {
+          title:'Covid 19 Information Center',
+          descriptiton:'Covid 19 global information visualization from various notable sources.',
+          thumbnail:'covidinfo.png',
+        },
+        {
+          title:'Covid 19 Prediction System',
+          descriptiton:'Prediction covid19 infection status based on medical condition.',
+          thumbnail:'covid-prediction.png',
+        }
+      ]
     }
   },
   mounted() {
@@ -274,6 +353,13 @@ export default {
 </script>
 
 <style lang="scss">
+.projectContainer {
+  background-color:#262626;
+  border-radius:20px;
+  height:300px;
+  width:100%;
+}
+
 .navMenus {
   div {
     &:hover {
