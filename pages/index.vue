@@ -229,7 +229,7 @@ The menupad provides a page for storing those links, one where it's all there.
 
     </div>
 
-    <div class="projectListSection pa-10">
+    <div class="projectListSection pa-10" style="min-height:80vh">
       
       <div class="d-flex align-center justify-center" style="flex-flow:column" data-aos="fade-up">
         <h1>Projects</h1>
@@ -241,42 +241,47 @@ The menupad provides a page for storing those links, one where it's all there.
             v-model="projectListToggle"
             rounded
           >
-            <v-btn>
+            <v-btn value="All">
               All
             </v-btn>
-            <v-btn>
+            <v-btn value="Location Intelligence">
               Location Intelligence
             </v-btn>
-            <v-btn>
+            <v-btn value="Public Services">
               Public Services
             </v-btn>
-            <v-btn>
+            <v-btn value="Machine Learning">
               Machine Learning
             </v-btn>
-            <v-btn>
+            <v-btn value="Other">
               Others
             </v-btn>
           </v-btn-toggle>
       </div>
+
+      
+      <div class="mt-5">
+        <v-container>
+            <v-row>
+                  <v-col cols="12" md="4" v-for="item,index in projectData" style="height:350px" :key="index"  > 
+                    <v-scale-transition>
+                      <div class="projectContainer" v-if="item.category==projectListToggle||projectListToggle=='All'">
+                        <div class="pa-5 d-flex align-space-between" style="flex-flow:row wrap">
+                          <img :src="'/img/' + item.thumbnail " width="100%"/>
+                          <div>
+                            <h3>{{item.title}}</h3>
+                            <div style="font-size:0.8em">{{item.descriptiton}}</div>
+                          </div>
+                        </div>
+                      </div>
+                   </v-scale-transition>
+                  </v-col>
+            </v-row>
+        </v-container>
+      </div>
+      
     </div>
 
-    <div>
-      <v-container>
-        <v-row>
-          <v-col cols="12" md="4" v-for="item,index in projectData" :key="index" style="height:350px">
-            <div class="projectContainer">
-              <div class="pa-5 d-flex align-space-between" style="flex-flow:row wrap">
-                <img :src="'/img/' + item.thumbnail " width="100%"/>
-                <div>
-                  <h3>{{item.title}}</h3>
-                  <div style="font-size:0.8em">{{item.descriptiton}}</div>
-                </div>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
-    </v-container>
-    </div>
 
     <v-dialog v-model="contact" width="500px">
       <v-card class="pa-5">
@@ -305,38 +310,43 @@ export default {
       model:null,
       contact:false,
       scrollPosition:null,
-      projectListToggle:'',
+      projectListToggle:'All',
       projectData:[
         {
           title:'Patrol Taru Pusat',
           descriptiton:'Spatial monitoring and control center. Integrating data from all across indonesia.',
           thumbnail:'patrolpusat.png',
-          category:''
+          category:'Public Services'
         },
         {
           title:'RDTR Interaktif',
           descriptiton:'Interaktif Spatial Plan of Indonesia. Featured in Online Single Submision (OSS) website.',
           thumbnail:'rdtrinteraktif.png',
+          category:'Public Services'
         },
         {
           title:'Composite Credit Rating',
           descriptiton:'Rating and Assessment comparison from multiple source like S&P, Moodys, and Fitch.',
           thumbnail:'ccr.png',
+          category:'Others'
         },
         {
           title:'Teletherapy Mobile App',
           descriptiton:'a Mobile app for online doctor consultation.',
           thumbnail:'teletherapy.png',
+          category:'Others'
         },
         {
           title:'Covid 19 Information Center',
           descriptiton:'Covid 19 global information visualization from various notable sources.',
           thumbnail:'covidinfo.png',
+          category:'Others'
         },
         {
           title:'Covid 19 Prediction System',
           descriptiton:'Prediction covid19 infection status based on medical condition.',
           thumbnail:'covid-prediction.png',
+          category:'Others'
         }
       ]
     }
