@@ -263,7 +263,7 @@ The menupad provides a page for storing those links, one where it's all there.
     <div>
       <v-container>
         <v-row>
-          <v-col cols="6" md="4" v-for="item,index in projectData" :key="index" style="height:350px">
+          <v-col cols="12" md="4" v-for="item,index in projectData" :key="index" style="height:350px">
             <div class="projectContainer">
               <div class="pa-5 d-flex align-space-between" style="flex-flow:row wrap">
                 <img :src="'/img/' + item.thumbnail " width="100%"/>
